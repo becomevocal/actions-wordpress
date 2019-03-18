@@ -50,7 +50,7 @@ echo "➤ Copying files..."
 
 # Copy from current branch to /trunk, excluding dotorg assets
 # The --delete flag will delete anything in destination that no longer exists in source
-rsync -r --exclude "/$ASSETS_DIR/" --exclude ".git/" --exclude ".github/" "$GITHUB_WORKSPACE/" trunk/ --delete
+rsync -r —-exclude-from "readme.txt" --exclude "/$ASSETS_DIR/" --exclude ".git/" --exclude ".github/" "$GITHUB_WORKSPACE/" trunk/ --delete
 
 # Copy dotorg assets to /assets
 rsync -r "$GITHUB_WORKSPACE/$ASSETS_DIR/" assets/ --delete
